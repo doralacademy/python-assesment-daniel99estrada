@@ -1,0 +1,31 @@
+Username=input("What do you want to be your username? ")
+Password=input("What do you want to be your password? ")
+Check=False
+def login():
+  i=3
+  print("You currently have", i, "Tries left")
+  while i>0:
+   Username2=input("What is your username? ")
+   Password2=input("What is your password? ")
+   if Username2==Username:
+     if Password2==Password:
+       print("Correct Username and Password Welcome",Username)
+       break
+     else:
+       i=i-1
+       print("Correct Username but wrong password you have ", i, " tries left.")
+   elif Password2==Password:
+    i=i-1
+    print("Correct Password but wrong Username you have ", i, " tries left.")
+   else:
+      i=i-1
+      print("Wrong Username and wrong password you have ", i, " tries left.")
+    
+  if Username==Username2 and Password==Password2:
+   print("You have sucessfully logged in")
+   return True 
+  else:
+   print("You inputted the incorrect Username or Password too many times.")
+   print("You have been locked out of this account.") 
+   return False 
+login()
